@@ -49,5 +49,5 @@ end
 delete('/projects/:id') do
   @project = Project.find(params[:id].to_i)
   @project.delete
-  erb(:projects)
+  redirect to('/projects')
 end
