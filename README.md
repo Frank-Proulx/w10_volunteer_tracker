@@ -16,7 +16,6 @@
 * Postgres
 * SQL
 * SQL Designer
-* Rake
 
 ## Description
 
