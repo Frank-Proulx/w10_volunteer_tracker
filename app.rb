@@ -23,5 +23,8 @@ get('/projects/new') do
 end
 
 post('/projects') do
-  
+  title = params[:project_title]
+  project = Project.new({:title => title, :id => nil})
+  project.save
+  redirect to('/projects')
 end
