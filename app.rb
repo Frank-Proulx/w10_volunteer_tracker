@@ -37,7 +37,7 @@ end
 
 patch('/projects/:id') do
   @project = Project.find(params[:id].to_i)
-  title = params[:project_name]
+  title = params[:title]
   @project.update({:title => title, :id => nil})
   erb(:project)
 end
