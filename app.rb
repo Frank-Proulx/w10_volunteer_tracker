@@ -18,12 +18,8 @@ get('/projects') do
   erb(:projects)
 end
 
-get('/projects/new') do
-  erb(:new_project)
-end
-
 post('/projects') do
-  title = params[:project_title]
+  title = params[:title]
   project = Project.new({:title => title, :id => nil})
   project.save
   redirect to('/projects')
@@ -50,4 +46,8 @@ delete('/projects/:id') do
   @project = Project.find(params[:id].to_i)
   @project.delete
   redirect to('/projects')
+end
+
+get('/volunteers') do
+  @volunteers = Volunteer.all
 end
