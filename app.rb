@@ -39,3 +39,15 @@ get('/projects/:id/edit') do
   erb(:edit_project)
 end
 
+patch('/projects/:id') do
+  @project = Project.find(params[:id].to_i)
+  title = params[:project_name]
+  @project.update({:title => title, :id => nil})
+  erb(:project)
+end
+
+delete('/projects/:id') do
+  @project = Project.find(params[:id].to_i)
+  @project.delete
+  erb(:projects)
+end
