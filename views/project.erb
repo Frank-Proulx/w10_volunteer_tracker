@@ -4,19 +4,15 @@
 
 <a href="/projects/<%= @project.id %>/edit">Edit Project</a>
 
-<h2>Add volunteer to project</h2>
+<h2>List of All Volunteers</h2>
 <% if @volunteers %>
-<% if @volunteers.any? %>
-<form method="post" action="/volunteer/<%= @project.id %>">
-<label>Select a Volunteer</label>
-<select class="form-select" name="name">
-  <% @volunteers.each do |volunteer| %>
-    <option value="<%= volunteer.id %>"><%= volunteer.name %></option>
-  <% end %>
-</select>
-<button>Select Volunteer</button>
-</form>
+  <ul>
+    <% @volunteers.each do |volunteer| %>
+      <li><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+    <% end %>
+  </ul>
 <% else %>
-<p>There are currently no volunteers available.</p>
+  <p>There are currently no volunteers to display.</p>
 <% end %>
-<% end %>
+
+<a href="/">Back to home</a>

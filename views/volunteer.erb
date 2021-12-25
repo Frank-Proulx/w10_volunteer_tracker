@@ -2,5 +2,28 @@
 <h4>Volunteer name: <%= @volunteer.name %></h4>
 <% end %>
 
+<h2>Add volunteer to project</h2>
+<form method="post" action="/volunteer/<%= @volunteer.id %>">
+  <input name="_method" type="hidden" value="patch">
+  <label for="name">Name</label>
+  <input class="form-control" id="name" name="name" value="<%= @volunteer.name %>">
+  <% if @projects %>
+  <label>Select a Project</label>
+  <select class="form-select" name="title">
+    <% @projects.each do |project| %>
+      <option value="<%= project.id %>"><%= project.title %></option>
+    <% end %>
+  </select>
+  <button class="btn">Update Volunteer</button>
+</form>
+<% else %>
+<p>There are currently no projects available.</p>
+<% end %>
+
+<% if @project %>
+<h4>This volunteer is currently assigned to: <%= @project.title %></h4>
+<% else %>
+<h4>No project currently assigned</h4>
+<% end %>
 
 <a href="/">Back to home</a>

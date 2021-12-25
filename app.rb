@@ -30,6 +30,7 @@ end
 get('/projects/:id') do
   @project = Project.find(params[:id].to_i)
   @volunteers = Volunteer.all
+  @assigned_volunteers = @project.volunteers
   erb(:project)
 end
 
@@ -59,6 +60,16 @@ post('/volunteers') do
 end
 
 get('/volunteer/:id') do
+  @projects = Project.all
   @volunteer = Volunteer.find(params[:id].to_i)
+  @project = Project.find((@volunteer.project_id).to_i)
   erb(:volunteer)
+end
+
+patch('/volunteer/:id') do
+  @project = Project.find(params[:title])
+  @volunteer = Volunteer.find(params[:id].to_i)
+  @volunteer.update(params[:title])
+  @volunteer.update_name(params[:name])
+  redirect to('/projects')
 end
