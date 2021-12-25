@@ -2,7 +2,7 @@
 <h2>Volunteer name: <%= @volunteer.name %></h2>
 <% end %>
 
-<h3>Add volunteer to project</h3>
+<h3>Add/update project assignment</h3>
 <form method="post" action="/volunteer/<%= @volunteer.id %>">
   <input name="_method" type="hidden" value="patch">
   <label for="name">Name</label>
