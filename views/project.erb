@@ -4,10 +4,10 @@
 
 <a href="/projects/<%= @project.id %>/edit">Edit Project</a>
 
-<h2>List of All Volunteers</h2>
-<% if @volunteers %>
+<% if @assigned_volunteers %>
+<h2>Volunteers assigned to this project</h2>
   <ul>
-    <% @volunteers.each do |volunteer| %>
+    <% @assigned_volunteers.each do |volunteer| %>
       <li><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></li>
     <% end %>
   </ul>

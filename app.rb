@@ -43,6 +43,7 @@ patch('/projects/:id') do
   @project = Project.find(params[:id].to_i)
   title = params[:title]
   @project.update({:title => title, :id => nil})
+  @volunteers = Volunteer.all
   erb(:project)
 end
 
