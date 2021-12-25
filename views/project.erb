@@ -3,3 +3,16 @@
 <% end %>
 
 <a href="/projects/<%= @project.id %>/edit">Edit Project</a>
+
+<h2>List of All Volunteers</h2>
+<% if @volunteers %>
+  <ul>
+    <% @volunteers.each do |volunteer| %>
+      <li><a href="/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no volunteers to display.</p>
+<% end %>
+
+<a href="/volunteer/new">Add a Volunteer</a>
