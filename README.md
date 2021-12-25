@@ -2,7 +2,7 @@
 
 #### By Frank Proulx
  
-#### This is an app for a site that allows the user to
+#### This is an app for a site that allows the user to add projects and volunteers, updating both and adding volunteers to projects
 
 ## Technologies Used
 
@@ -19,7 +19,7 @@
 
 ## Description
 
-  Webpage display 
+This site allows the user to add projects by name on the landing page, where they can view all projects and volunteers. They can then update or delete a project. The user is also able to add volunteers, which can be assigned to projects, as well as have their names updated. 
 
 ## Setup/Installation Requirements
 
@@ -28,22 +28,17 @@
 * Type **git clone https://github.com/Frank-Proulx/w10_volunteer_tracker.git** to clone the repository to your local machine.
 * Navigate into project directory by typing cd w10_volunteer_tracker  
 * Type bundle install in the terminal to populate gems
-* To create a database using the rake with the database backup included in this project, type in your terminal: 
-      `rake build\["train_system"\]`
-
-* Or, without rake, type in your terminal:  
+* Type in your terminal:  
       `createdb [DATABASE NAME]`  
       `psql [DATABASE_NAME] < database_backup.sql`  
       `createdb -T [DATABASE_NAME] [TEST_DATABASE_NAME]`
-
 * After building the database, type rspec in the terminal to confirm passing of all tests  
 * Type ruby app.rb to run the program with Sinatra
 * Open browswer and enter the url "http://localhost:4567/" unless otherwise prompted in the terminal
 
 ## Known Bugs
 
-* When album that user tries to add to artist does not exist, error page is not handled.
-* Not all rspec tests pass; we left two useful fails in artists spec file.
+No known bugs.
 
 ## License
 
@@ -53,16 +48,4 @@ If you have any issues, questions, ideas or concerns, please reach out to me at 
 
 Copyright (c) 2021 Frank Proulx
 
-![image_of_database_schema](./public/train_system_schema.png)
-
-## Notes
-
-* To do a database dump using rake, type in your terminal from the project root folder: `rake dump\["train_system"\]`.
-* To do a database dump without rake, `pg_dump [name of database] > database_backup.sql` in root directory
-* To create database first enter psql then `CREATE DATABASE [name];`
-* `\c [name of database]`
-* Make schema, `CREATE TABLE [name of table] (column_name datatype, ...);`
-* Make all tables you need, don't forget join table!!
-* To check schema `\d [database name]`
-* `CREATE DATABASE [name of test database] WITH TEMPLATE [name of main database you just created];`
-* if you get an error in psql, check for semicolon!! 
+![image_of_database_schema](./volunteer_tracker_schema.png)
