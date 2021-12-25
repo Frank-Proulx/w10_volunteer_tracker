@@ -10,6 +10,7 @@ DB = PG.connect({:dbname => "volunteer_tracker"})
 
 get('/') do
   @projects = Project.all
+  @volunteers = Volunteer.all
   erb(:projects)
 end
 
@@ -28,6 +29,7 @@ end
 
 get('/projects/:id') do
   @project = Project.find(params[:id].to_i)
+  @volunteers = Volunteer.all
   erb(:project)
 end
 
