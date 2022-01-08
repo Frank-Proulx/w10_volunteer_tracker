@@ -29,9 +29,9 @@ This site allows the user to add projects by name on the landing page, where the
 * Navigate into project directory by typing cd w10_volunteer_tracker  
 * Type bundle install in the terminal to populate gems
 * Type in your terminal:  
-      `createdb [DATABASE NAME]`  
-      `psql [DATABASE_NAME] < database_backup.sql`  
-      `createdb -T [DATABASE_NAME] [TEST_DATABASE_NAME]`
+      `createdb volunteer_tracker`  
+      `psql volunteer_tracker < database_backup.sql`  
+      `createdb -T volunteer_tracker volunteer_tracker_test`
 * After building the database, type rspec in the terminal to confirm passing of all tests  
 * Type ruby app.rb to run the program with Sinatra
 * Open browswer and enter the url "http://localhost:4567/" unless otherwise prompted in the terminal
